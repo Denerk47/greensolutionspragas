@@ -14,10 +14,6 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Debug: remover após confirmar */}
-      <div className="fixed top-0 left-0 bg-red-500 text-white px-4 py-1 text-xs z-[9999]">
-        v2025.01.15-CTAs
-      </div>
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
