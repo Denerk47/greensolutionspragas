@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, MessageCircle } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const WHATSAPP_LINK = "https://wa.me/5511962207172?text=Olá! Gostaria de solicitar um orçamento para controle de pragas.";
 
@@ -34,13 +35,13 @@ const Header = () => {
       <div className="container flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
-          <span
-            className={`text-xl md:text-2xl font-display font-bold transition-colors ${
-              isScrolled ? "text-primary" : "text-[hsl(0_0%_100%)]"
+          <img 
+            src={logo} 
+            alt="Green Solutions - Controle de Pragas" 
+            className={`h-10 md:h-12 w-auto transition-all ${
+              isScrolled ? "" : "brightness-0 invert"
             }`}
-          >
-            Green Solutions
-          </span>
+          />
         </a>
 
         {/* Desktop Navigation */}
