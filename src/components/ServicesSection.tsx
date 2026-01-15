@@ -1,5 +1,8 @@
-import { Bug, Rat, TreeDeciduous, Bird } from "lucide-react";
+import { Bug, Rat, TreeDeciduous, Bird, MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import baratasImg from "@/assets/baratas.png";
+
+const WHATSAPP_LINK = "https://wa.me/5511962207172?text=Olá! Gostaria de solicitar um orçamento para controle de pragas.";
 import ratoImg from "@/assets/rato.png";
 import cupimImg from "@/assets/cupim.jpg";
 import pomboImg from "@/assets/pombo.png";
@@ -84,6 +87,16 @@ const ServicesSection = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* CTA Button */}
+        <div className="text-center mt-12">
+          <Button variant="default" size="lg" asChild>
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="w-5 h-5" />
+              Solicitar orçamento para seu serviço
+            </a>
+          </Button>
         </div>
       </div>
     </section>

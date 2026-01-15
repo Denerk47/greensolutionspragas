@@ -1,5 +1,8 @@
-import { Award, Leaf, Target, ThumbsUp } from "lucide-react";
+import { Award, Leaf, Target, ThumbsUp, MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import colaboradorImg from "@/assets/colaborador.jpg";
+
+const WHATSAPP_LINK = "https://wa.me/5511962207172?text=Olá! Gostaria de solicitar um orçamento para controle de pragas.";
 
 const TrustSection = () => {
   const stats = [
@@ -51,7 +54,7 @@ const TrustSection = () => {
               </p>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 mb-8">
                 {stats.map((stat, index) => (
                   <div
                     key={index}
@@ -69,6 +72,14 @@ const TrustSection = () => {
                   </div>
                 ))}
               </div>
+
+              {/* CTA Button */}
+              <Button variant="default" size="lg" asChild className="w-full md:w-auto">
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="w-5 h-5" />
+                  Quero essa segurança para meu espaço
+                </a>
+              </Button>
             </div>
           </div>
         </div>

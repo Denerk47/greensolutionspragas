@@ -1,3 +1,4 @@
+import { Phone, AlertTriangle } from "lucide-react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -9,6 +10,7 @@ import CertificationsSection from "@/components/CertificationsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import MiniCTASection from "@/components/MiniCTASection";
 
 const Index = () => {
   return (
@@ -19,15 +21,26 @@ const Index = () => {
         <section id="servicos">
           <ServicesSection />
         </section>
-        <section id="diferenciais">
-          <DifferentialsSection />
-        </section>
+        <MiniCTASection 
+          title="Precisa resolver um problema com pragas?"
+          subtitle="Resposta em até 1 hora • Orçamento grátis"
+          icon={Phone}
+        />
         <section id="como-funciona">
           <HowItWorksSection />
         </section>
+        <section id="diferenciais">
+          <DifferentialsSection />
+        </section>
+        <MiniCTASection 
+          title="Solicite uma avaliação gratuita"
+          subtitle="Técnicos especializados • Atendimento em toda Grande SP"
+          icon={AlertTriangle}
+          variant="urgent"
+        />
+        <TrustSection />
         <AudienceSection />
         <CertificationsSection />
-        <TrustSection />
         <section id="contato">
           <CTASection />
         </section>
