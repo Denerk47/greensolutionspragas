@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -7,9 +8,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* About */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-display font-bold text-green-pale mb-4">
-              Green Solutions
-            </h3>
+            <img 
+              src={logo} 
+              alt="Green Solutions - Controle de Pragas" 
+              className="h-16 w-auto mb-4 brightness-0 invert"
+            />
             <p className="text-[hsl(0_0%_100%/0.7)] leading-relaxed mb-6 max-w-md">
               Empresa especializada em controle de pragas, oferecendo soluções seguras e eficazes para residências, condomínios, comércios e indústrias na Grande São Paulo e ABC.
             </p>
