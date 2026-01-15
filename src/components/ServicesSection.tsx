@@ -1,27 +1,35 @@
 import { Bug, Rat, TreeDeciduous, Bird } from "lucide-react";
+import baratasImg from "@/assets/baratas.png";
+import ratoImg from "@/assets/rato.png";
+import cupimImg from "@/assets/cupim.jpg";
+import pomboImg from "@/assets/pombo.png";
 
 const ServicesSection = () => {
   const services = [
     {
       icon: Bug,
+      image: baratasImg,
       title: "Desinsetização",
       description:
         "Eliminação completa de baratas, formigas, mosquitos, pulgas, traças, aranhas e outros insetos. Métodos seguros e eficazes para sua família.",
     },
     {
       icon: Rat,
+      image: ratoImg,
       title: "Desratização",
       description:
         "Controle profissional de ratos e camundongos. Identificação de focos, eliminação e prevenção de novas infestações com total segurança.",
     },
     {
       icon: TreeDeciduous,
+      image: cupimImg,
       title: "Descupinização",
       description:
         "Tratamento especializado contra cupins de madeira seca e subterrâneos. Proteja seu patrimônio com técnicas modernas e garantia estendida.",
     },
     {
       icon: Bird,
+      image: pomboImg,
       title: "Controle de Pombos e Morcegos",
       description:
         "Manejo ético e legal de pombos e morcegos. Instalação de barreiras físicas e sistemas de afastamento sem prejudicar os animais.",
@@ -49,18 +57,31 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group bg-card rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 border border-border"
+              className="group bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 border border-border"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-14 h-14 bg-secondary rounded-xl flex items-center justify-center mb-5 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                <service.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
+              {/* Image Container */}
+              <div className="relative h-40 overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-3 w-10 h-10 bg-primary rounded-lg flex items-center justify-center shadow-lg">
+                  <service.icon className="w-5 h-5 text-primary-foreground" />
+                </div>
               </div>
-              <h3 className="text-xl font-display font-bold text-foreground mb-3">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {service.description}
-              </p>
+              
+              {/* Content */}
+              <div className="p-5">
+                <h3 className="text-xl font-display font-bold text-foreground mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  {service.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
