@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Shield, Clock, CreditCard, Percent, MessageCircle } from "lucide-react";
+import heroBanner from "@/assets/hero-banner.jpg";
 
 const WHATSAPP_LINK = "https://wa.me/5511962207172?text=Olá! Gostaria de solicitar um orçamento para controle de pragas.";
 
@@ -12,7 +13,16 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-screen hero-gradient overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBanner})` }}
+      />
+      
+      {/* Dark Overlay with Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--primary)/0.85)] via-[hsl(var(--primary)/0.75)] to-[hsl(var(--primary-dark)/0.9)]" />
+
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-[hsl(0_0%_100%)] rounded-full blur-3xl" />

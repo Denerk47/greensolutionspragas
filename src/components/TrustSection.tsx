@@ -1,4 +1,5 @@
 import { Award, Leaf, Target, ThumbsUp } from "lucide-react";
+import colaboradorImg from "@/assets/colaborador.jpg";
 
 const TrustSection = () => {
   const stats = [
@@ -11,10 +12,27 @@ const TrustSection = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Content Grid */}
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left - Text */}
+            {/* Left - Image */}
+            <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src={colaboradorImg} 
+                  alt="Profissional Green Solutions"
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+              </div>
+              {/* Floating Badge */}
+              <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground rounded-xl p-4 shadow-lg hidden md:block">
+                <div className="text-2xl font-display font-bold">15+</div>
+                <div className="text-sm opacity-90">Anos de Experiência</div>
+              </div>
+            </div>
+
+            {/* Right - Text & Stats */}
             <div>
               <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
                 Confiança e credibilidade
@@ -28,29 +46,29 @@ const TrustSection = () => {
                 <strong className="text-foreground">atendimento humanizado</strong> e{" "}
                 <strong className="text-foreground">responsabilidade ambiental</strong>.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed mb-8">
                 Nosso compromisso vai além da eliminação de pragas: trabalhamos para criar ambientes saudáveis e seguros, utilizando métodos que respeitam o meio ambiente e a saúde de sua família ou colaboradores.
               </p>
-            </div>
 
-            {/* Right - Stats */}
-            <div className="grid grid-cols-2 gap-6">
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="bg-secondary rounded-2xl p-6 text-center"
-                >
-                  <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <stat.icon className="w-6 h-6 text-primary-foreground" />
+              {/* Stats Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                {stats.map((stat, index) => (
+                  <div
+                    key={index}
+                    className="bg-secondary rounded-xl p-4 text-center"
+                  >
+                    <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mx-auto mb-3">
+                      <stat.icon className="w-5 h-5 text-primary-foreground" />
+                    </div>
+                    <div className="text-2xl font-display font-bold text-primary mb-1">
+                      {stat.value}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      {stat.label}
+                    </div>
                   </div>
-                  <div className="text-3xl font-display font-bold text-primary mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
